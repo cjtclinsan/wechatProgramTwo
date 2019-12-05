@@ -1,6 +1,35 @@
 <!--pages/home/home.wxml-->
 <text class="title">HELLO WORLD</text>
 <button size="mini">按钮</button>
-<image src=""></image>
 
-<view>2222</view>
+<!--toast-->
+<button size="mini" bindtap="handleShowToast">showToast</button>
+
+<!--modal-->
+<button size="mini" bindtap="handleShowModal">showModal</button>
+
+<!--loading-->
+<button size="mini" bindtap="handleShowLoading">showLoading</button>
+
+<!--action-->
+<button size="mini" bindtap="handleShowAction">showAction</button>
+
+<!--分享-->
+<button size="mini" open-type="share">分享</button>
+
+<navigator url="/pages/detail/detail"
+           open-type="redirect">
+           跳到详情redirect
+</navigator>
+
+<navigator url="/pages/about/about"
+           open-type="switchTab">
+           跳到关于switchTab
+</navigator>
+
+<navigator url="/pages/detail/detail"
+          open-type="reLaunch">
+  跳到详情页reLaunch
+</navigator>
+
+<button size="mini" bindtap="handlePushDetail">跳到详情页</button>
