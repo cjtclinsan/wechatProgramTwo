@@ -1,35 +1,39 @@
-<!--pages/home/home.wxml-->
-<text class="title">HELLO WORLD</text>
-<button size="mini">按钮</button>
+<!--轮播 w-swiper组件-->
+<view class="home">
+  <view hidden='{{!showTabControl}}'>
+    <w-tab-control class='tab-control-temp' 
+                 titles="{{titles}}" 
+                 bind:tabclick="handleTabClick"/>
+  </view>
 
-<!--toast-->
-<button size="mini" bindtap="handleShowToast">showToast</button>
+  <scroll-view class='content' 
+                scroll-y 
+                bindscrolltolower="loadMore"
+                scroll-with-animation="true"
+                scroll-top="{{topPosition}}"
+                bindscroll="scrollPosition">
+    <w-swiper list="{{banners}}" />
 
-<!--modal-->
-<button size="mini" bindtap="handleShowModal">showModal</button>
+    <!--推荐数据  w-recommend组件-->
+    <w-recommend recommends="{{hotCourse}}" />
 
-<!--loading-->
-<button size="mini" bindtap="handleShowLoading">showLoading</button>
+    <!--展示图片-->
+    <w-popular />
 
-<!--action-->
-<button size="mini" bindtap="handleShowAction">showAction</button>
+    <w-tab-control class='tab-control' 
+                  titles="{{titles}}" 
+                  bind:tabclick="handleTabClick"/>
 
-<!--分享-->
-<button size="mini" open-type="share">分享</button>
+    <!--展示课程-->
+    <w-course-item courselist="{{course[currentType].list}}" />
 
-<navigator url="/pages/detail/detail"
-           open-type="redirect">
-           跳到详情redirect
-</navigator>
+    <w-back-top bindtap="onBackTop" wx:if="{{showBackTop}}"/>
+  </scroll-view>
+</view>
 
-<navigator url="/pages/about/about"
-           open-type="switchTab">
-           跳到关于switchTab
-</navigator>
 
-<navigator url="/pages/detail/detail"
-          open-type="reLaunch">
-  跳到详情页reLaunch
-</navigator>
 
-<button size="mini" bindtap="handlePushDetail">跳到详情页</button>
+
+
+
+

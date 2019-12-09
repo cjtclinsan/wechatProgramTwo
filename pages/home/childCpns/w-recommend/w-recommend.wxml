@@ -1,0 +1,8 @@
+<view class="recommend">
+  <block wx:for="{{recommends}}" wx:key="index">
+    <view class="recommend-item">
+      <image src='{{imageURL}}{{item.coverPath}}' class="recommend-image"/>
+      <view class="recommend-view">{{item.courseName}}</view>
+    </view>
+  </block>
+</view>

@@ -1,0 +1,13 @@
+<!--轮播-->
+<swiper class="swiper" 
+        circular 
+        autoplay interval="3000" duration="500"
+        indicator-dots indicator-active-color="#ff5777">
+  <block wx:for="{{list}}" wx:key="{{index}}">
+    <swiper-item class="swiper-item">
+      <image src="{{imageURL}}{{item.imagePath}}" 
+             class="swiper-image" 
+             mode="scaleToFill"/>
+    </swiper-item>
+  </block>
+</swiper>

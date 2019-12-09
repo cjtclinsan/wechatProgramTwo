@@ -1,0 +1,13 @@
+<view class='course'>
+  <block wx:for="{{courselist}}" wx:key="index">
+    <view class='course-item'>
+      <image src="{{imageURL}}{{item.coverPath}}" class="image"/>
+      <view class="title-info">
+        <view class="title">{{item.courseName}}</view>
+        <view class="info">
+          <text class="price">￥{{item.onlinePriceSum}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
